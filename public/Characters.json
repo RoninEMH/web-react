@@ -1,0 +1,30 @@
+{
+  "data": {
+    "characters": [
+      {
+        "id": 1,
+        "name": "Goku",
+        "img": "https://i.pinimg.com/originals/cc/95/1a/cc951a9b218b5238794f7921007f878a.png",
+        "powerLevel": 180000
+      },
+      {
+        "id": 2,
+        "name": "Vegeta",
+        "img": "https://fsb.zobj.net/crop.php?r=bBvSMlYOh8-uxZClzqrahvaAdg7fhGIrDv36fPKaqTFsozAXFvYeEgsRY-5vog8hLUYOSCdutZYeHbugb62nPMxpHnxWivRtJrjCGr9J62H4NqFalmyiyd6P1Pwo0iKCtydrkO8Fbk9R2MGd",
+        "powerLevel": 90000
+      },
+      {
+        "id": 3,
+        "name": "Gohan",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTSBnPdfLDQxDqkQJsX0F9WjywyJCgmCRZVaw&usqp=CAU",
+        "powerLevel": 45000
+      },
+      {
+        "id": 4,
+        "name": "GokuSSJ",
+        "img": "https://i.pinimg.com/originals/ee/12/fc/ee12fc85ba48a01ca5a526b7b2f1399f.png",
+        "powerLevel": 150000000
+      }
+    ]
+  }
+}
