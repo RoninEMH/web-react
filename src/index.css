@@ -12,36 +12,6 @@ code {
     monospace;
 }
 
-.todo-list {
-  background-color: white;
-  margin: auto;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #efefef;
-  box-shadow:
-  /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
-    /* The second layer */ 0 10px 0 -5px #eee,
-    /* The second layer shadow */ 0 10px 1px -4px rgba(0, 0, 0, 0.15),
-    /* The third layer */ 0 20px 0 -10px #eee,
-    /* The third layer shadow */ 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-  padding: 30px;
-}
-
-.todo-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px 20px 0;
-  width: 70%;
-  border-bottom: 1px solid #cecece;
-  font-family: Roboto, sans-serif;
-  font-weight: 100;
-  font-size: 15px;
-  color: #333333;
-}
-
 input[type="checkbox"] {
   margin-right: 10px;
   font-size: 30px;
@@ -87,88 +57,6 @@ header > p {
   color: whitesmoke;
   font-size: 50px;
   margin-left: 60px;
-}
-
-.meme {
-  position: relative;
-  width: 90%;
-  margin: auto;
-}
-
-.meme > img {
-  width: 50%;
-}
-
-.meme > h2 {
-  position: absolute;
-  width: 80%;
-  text-align: center;
-  left: 25%;
-  transform: translateX(-50%);
-  margin: 15px 0;
-  padding: 0 5px;
-  font-family: impact, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
-    2px 2px 5px #000;
-}
-
-.meme > .bottom {
-  bottom: 0;
-}
-
-.meme > .top {
-  top: 0;
-}
-
-.meme-form {
-  width: 90%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.meme-form > input {
-  width: 45%;
-  height: 40px;
-}
-
-.meme-form > button {
-  border: none;
-  font-family: VT323, monospace;
-  font-size: 25px;
-  letter-spacing: 1.5px;
-  color: white;
-  background: #6441a5;
-}
-
-.meme-form > input::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-family: VT323, monospace;
-  font-size: 25px;
-  text-align: cen;
-}
-.meme-form > input::-moz-placeholder {
-  /* Firefox 19+ */
-  font-family: VT323, monospace;
-  font-size: 25px;
-  text-align: cen;
-}
-.meme-form > input:-ms-input-placeholder {
-  /* IE 10+ */
-  font-family: VT323, monospace;
-  font-size: 25px;
-  text-align: cen;
-}
-.meme-form > input:-moz-placeholder {
-  /* Firefox 18- */
-  font-family: VT323, monospace;
-  font-size: 25px;
-  text-align: cen;
 }
 
 .powerLevel {

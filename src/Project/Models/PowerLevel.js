@@ -10,6 +10,7 @@ function PowerLevel(props) {
     "https://i.pinimg.com/originals/bf/b5/43/bfb543ee17f7953c9cba90498f1ae640.jpg";
 
   let img = defaultImage;
+  let name = "Opening";
 
   let [DBZCharacters, setDBZCharacters] = useState([
     {
@@ -37,12 +38,19 @@ function PowerLevel(props) {
   function handleImg() {
     DBZCharacters.sort((x, y) => x.powerLevel - y.powerLevel);
     DBZCharacters.map((character) => {
-      if (character.powerLevel <= powerLevel) {
-        img = character.img;
-      }
+      if (character.powerLevel <= powerLevel) img = character.img;
       return character;
     });
     return img;
+  }
+
+  function handleName() {
+    DBZCharacters.sort((x, y) => x.powerLevel - y.powerLevel);
+    DBZCharacters.map((character) => {
+      if (character.powerLevel <= powerLevel) name = character.name;
+      return character;
+    });
+    return name;
   }
 
   function handleIncrease() {
@@ -109,11 +117,23 @@ function PowerLevel(props) {
           onChange={handleKaioken}
         />
       </div>
+
+      <h3
+        style={{
+          fontSize: "30px",
+          position: "absolute",
+          display: "inline-block",
+          marginLeft: "450px",
+          marginTop: "-70px",
+        }}
+      >
+        {handleName()}
+      </h3>
       <img
         className=".character"
         height="500px"
         width="500px"
-        style={{ marginLeft: "400px" }}
+        style={{ marginLeft: "300px", marginTop: "0px" }}
         src={handleImg()}
         alt="Character Power Level"
       />
