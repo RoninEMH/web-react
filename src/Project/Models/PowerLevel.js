@@ -30,10 +30,6 @@ function PowerLevel(props) {
       .catch(() => console.log("Error"));
   }, []);
 
-  function print() {
-    console.log(DBZCharacters);
-  }
-
   useEffect(() => {
     handleImg();
   }, [powerLevel]);
@@ -63,13 +59,8 @@ function PowerLevel(props) {
 
   function handleKaioken(event) {
     if (event.target.checked) {
-      console.log(event.target);
       const val = event.target.value;
-      console.log(kaioken, " previous");
-      console.log(event.target.value, " avtivated");
       setPowerLevel((prevPowerLevel) => {
-        console.log("prevKaioken= ", kaioken);
-        console.log("val= ", val);
         return prevPowerLevel * (val / kaioken);
       });
       setKaioken(() => val);
