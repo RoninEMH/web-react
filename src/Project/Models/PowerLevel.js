@@ -9,8 +9,7 @@ function PowerLevel(props) {
   const defaultImage =
     "https://i.pinimg.com/originals/bf/b5/43/bfb543ee17f7953c9cba90498f1ae640.jpg";
 
-  let img = defaultImage;
-  let name = "Opening";
+  let ch = { name: "Opening", img: defaultImage };
 
   let [DBZCharacters, setDBZCharacters] = useState([
     {
@@ -32,25 +31,16 @@ function PowerLevel(props) {
   }, []);
 
   useEffect(() => {
-    handleImg();
+    handleCharacter();
   }, [powerLevel]);
 
-  function handleImg() {
+  function handleCharacter() {
     DBZCharacters.sort((x, y) => x.powerLevel - y.powerLevel);
     DBZCharacters.map((character) => {
-      if (character.powerLevel <= powerLevel) img = character.img;
+      if (character.powerLevel <= powerLevel) ch = character;
       return character;
     });
-    return img;
-  }
-
-  function handleName() {
-    DBZCharacters.sort((x, y) => x.powerLevel - y.powerLevel);
-    DBZCharacters.map((character) => {
-      if (character.powerLevel <= powerLevel) name = character.name;
-      return character;
-    });
-    return name;
+    return ch;
   }
 
   function handleIncrease() {
@@ -127,14 +117,14 @@ function PowerLevel(props) {
           marginTop: "-70px",
         }}
       >
-        {handleName()}
+        {handleCharacter().name}
       </h3>
       <img
         className=".character"
         height="500px"
         width="500px"
         style={{ marginLeft: "300px", marginTop: "0px" }}
-        src={handleImg()}
+        src={handleCharacter().img}
         alt="Character Power Level"
       />
     </div>
