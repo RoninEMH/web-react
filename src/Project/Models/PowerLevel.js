@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 let id;
-let prevKaioken = 1;
 
 function PowerLevel(props) {
   let [powerLevel, setPowerLevel] = useState(0);
@@ -73,8 +72,6 @@ function PowerLevel(props) {
         console.log("val= ", val);
         return prevPowerLevel * (val / kaioken);
       });
-
-      //prevKaioken = event.target.value;
       setKaioken(() => val);
     }
   }
