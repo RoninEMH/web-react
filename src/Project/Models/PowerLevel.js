@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createGlobalState } from "react-hooks-global-state";
 
 let id;
+const staminaCost = 200;
 
 let { useGlobalState } = createGlobalState({ stamina: 0 });
 
@@ -81,7 +82,7 @@ function PowerLevel(props) {
 
   useEffect(() => {
     setStamina((prevStamina) => {
-      if (countT3 > 0) return prevStamina - 200;
+      if (countT3 > 0) return prevStamina - staminaCost;
       else return prevStamina;
     });
   }, [countT3]);
