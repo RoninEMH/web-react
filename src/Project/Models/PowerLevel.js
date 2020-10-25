@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { createGlobalState } from "react-hooks-global-state";
 
 let id;
+
+let { useGlobalState } = createGlobalState({ stamina: 0 });
 
 function PowerLevel(props) {
   let [powerLevel, setPowerLevel] = useState(0);
   let [kaioken, setKaioken] = useState(1);
+  const countT3 = props.countT3;
+  let [stamina, setStamina] = useGlobalState("stamina");
+
   const countT1 = props.countT1;
   const defaultImage =
     "https://i.pinimg.com/originals/bf/b5/43/bfb543ee17f7953c9cba90498f1ae640.jpg";
@@ -59,24 +65,47 @@ function PowerLevel(props) {
     if (event.target.checked) {
       const val = event.target.value;
       setPowerLevel((prevPowerLevel) => {
-        return prevPowerLevel * (val / kaioken);
+        return Math.floor(prevPowerLevel * (val / kaioken));
       });
       setKaioken(() => val);
     }
   }
 
   useEffect(() => {
-    let id = setInterval(
-      setPowerLevel((prevPowerLevel) => prevPowerLevel + countT1),
+    const staminaID = setInterval(
+      () => setStamina((prevStamina) => prevStamina + 11),
       500
     );
-    return clearInterval(id);
+    return () => clearInterval(staminaID);
+  }, [setStamina]);
+
+  useEffect(() => {
+    setStamina((prevStamina) => {
+      if (countT3 > 0) return prevStamina - 200;
+      else return prevStamina;
+    });
+  }, [countT3]);
+
+  useEffect(() => {
+    const id = setInterval(
+      setPowerLevel((prevPowerLevel) => prevPowerLevel + countT1),
+      1000
+    );
+    return () => clearInterval(id);
   }, [countT1]);
+
+  function sendStamina() {
+    props.parentCallBack(stamina);
+  }
+
+  useEffect(() => {
+    props.parentCallBack(stamina);
+  }, [stamina]);
 
   return (
     <div>
       <h1 className=".powerLevel">PowerLevel = {powerLevel}</h1>
-
+      <h2 className=".powerLevel">Stamina = {stamina}</h2>
       <div style={{ display: "inline-block", left: "80%" }}>
         <h2>Charge!!!</h2>
         <img

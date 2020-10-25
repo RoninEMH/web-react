@@ -15,9 +15,13 @@ function Tier2(props) {
     setCount((prevCount) => prevCount + 1);
   }
 
+  function sendStamina(data) {
+    props.parentCallBack(data);
+  }
+
   return (
     <div>
-      <Tier1 countT2={count} />
+      <Tier1 countT3={countT3} countT2={count} parentCallBack={sendStamina} />
       <label>SSJ2 cells: {count}</label>
       <button onClick={AddTier}>Add</button>
     </div>
